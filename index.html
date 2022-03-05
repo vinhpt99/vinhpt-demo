@@ -11,14 +11,14 @@
 
   <div class="container"> 
    
-    <div class="valentines">
+    <div class="valentines" >
     
       <div class="envelope"></div>
       <div class="front"></div>
       <div class="card">
       <div class="text">
            <p style="margin-top: 0px;
-           margin-left: 60px;">  Chúc em 8/3<br>  vui vẻ, hạnh<br> phúc, có thật<br> nhiều điều <br>tuyệt vời</p>
+           margin-left: 62px;">  Chúc em 8/3<br>  vui vẻ, hạnh<br> phúc,có thật<br> nhiều điều <br>tuyệt vời</p>
          
        
         
@@ -34,6 +34,7 @@
       </div>
     </div>
     </div>
+    <input type="text" hidden name="" id="check" value="0">
     <div class="shadow">
      
     </div>
@@ -122,7 +123,7 @@
   .text {
     position: absolute;
     font-family: monospace;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
     line-height:20px;
     top:19px;
@@ -278,16 +279,39 @@
   }
     </style>
     <script>
+      
       $(document).ready(function () {
-      $('.container').mouseenter(function () {
-          $('.card').stop().animate({
-              top: '-90px'
-          }, 'slow');
-      }).mouseleave(function () {
-          $('.card').stop().animate({
-              top: 0
-          }, 'slow');
-      });
+        $(".valentines").click(function(){
+              var check = $('#check').val();
+              if(check == 0){
+                $('#check').val(1);
+                $('.card').stop().animate({
+                     top: '-100px'
+                     }, 'slow');
+              }
+              else {
+                $('#check').val(0);
+                $('.card').stop().animate({
+               top: 0
+           }, 'slow');
+              }
+                    
+        });
+      // var check = false;
+      // $('.container').onclick(function () {
+      //     check = true;
+      //     if(check == true){
+      //           $('.card').stop().animate({
+      //             top: '-90px'
+      //         }, 'slow');
+      //     }
+         
+      // })
+      // // .mouseleave(function () {
+      // //     $('.card').stop().animate({
+      // //         top: 0
+      // //     }, 'slow');
+      // // });
   });
     </script>
 </body>
